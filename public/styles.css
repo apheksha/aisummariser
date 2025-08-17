@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f4f6f8;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #2b6cb0;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-weight: 400;
+  color: #555;
+}
+
+/* Card style */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.12);
+}
+
+h2 {
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Inputs & Textareas */
+.input, .textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.input:focus, .textarea:focus {
+  outline: none;
+  border-color: #2b6cb0;
+  box-shadow: 0 0 0 2px rgba(43,108,176,0.15);
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.1s, background 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.primary {
+  background: #2b6cb0;
+  color: #fff;
+}
+
+.primary:hover {
+  background: #1e4e8c;
+}
+
+.secondary {
+  background: #e2e8f0;
+  color: #333;
+}
+
+.secondary:hover {
+  background: #cbd5e0;
+}
+
+/* Action buttons flex */
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Status messages */
+.status {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.muted {
+  opacity: 0.7;
+}
