@@ -30,7 +30,6 @@ h1 {
   color: #555;
 }
 
-/* Card style */
 .card {
   background: #fff;
   border-radius: 12px;
@@ -50,8 +49,6 @@ h2 {
   font-size: 1.2rem;
   color: #333;
 }
-
-/* Inputs & Textareas */
 .input, .textarea {
   width: 100%;
   padding: 12px 14px;
@@ -68,7 +65,6 @@ h2 {
   box-shadow: 0 0 0 2px rgba(43,108,176,0.15);
 }
 
-/* Buttons */
 .btn {
   padding: 12px 20px;
   border: none;
@@ -100,14 +96,12 @@ h2 {
   background: #cbd5e0;
 }
 
-/* Action buttons flex */
 .actions {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
 }
 
-/* Status messages */
 .status {
   margin-top: 12px;
   font-size: 0.95rem;
