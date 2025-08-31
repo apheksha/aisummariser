@@ -11,7 +11,6 @@ const subjectEl = byId('subject');
 const sendBtn = byId('sendBtn');
 const statusEl = byId('status');
 
-// Clear everything
 clearBtn.onclick = () => {
   fileEl.value = '';
   transcriptEl.value = '';
@@ -22,7 +21,7 @@ clearBtn.onclick = () => {
   statusEl.textContent = '';
 };
 
-// Generate summary
+
 genBtn.onclick = async () => {
   try {
     const form = new FormData();
@@ -46,7 +45,6 @@ genBtn.onclick = async () => {
   }
 };
 
-// Send email
 sendBtn.onclick = async () => {
   try {
     const to = emailsEl.value.trim();
