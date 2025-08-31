@@ -15,17 +15,15 @@ app.use(express.json({ limit: "5mb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-// --- Helpers ---
 function buildGroqPrompt(transcript, customPrompt) {
   const sys = `You are an assistant that produces compact, well-structured meeting summaries. Follow the user's instruction strictly. If no instruction, default to: bullets, key decisions, action items with owners & due dates (if present).`;
   const user = `TRANSCRIPT (verbatim):\n\n${transcript}\n\nINSTRUCTION: ${customPrompt || "Summarize the meeting in concise bullet points. Include action items."}`;
   return { sys, user };
 }
 
-// --- Summarize endpoint ---
 app.post("/api/summarize", upload.single("file"), async (req, res) => {
   try {
-    // Accept either a file upload or raw text
+  
     const fileBuffer = req.file?.buffer;
     const transcriptTextFromFile = fileBuffer ? fileBuffer.toString("utf-8") : "";
     const transcript = (req.body.transcript || "") + (transcriptTextFromFile || "");
@@ -68,7 +66,6 @@ app.post("/api/summarize", upload.single("file"), async (req, res) => {
 });
 
 
-// --- Email endpoint ---
 app.post("/api/email", async (req, res) => {
     try {
       const { to, subject, body } = req.body;
@@ -86,7 +83,7 @@ app.post("/api/email", async (req, res) => {
   
       const info = await transporter.sendMail({
         from: process.env.FROM_EMAIL,
-        to, // can be comma-separated
+        to, 
         subject: subject || "Meeting Summary",
         text: body
       });
@@ -98,6 +95,5 @@ app.post("/api/email", async (req, res) => {
     }
   });
 
-// --- Start ---
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
