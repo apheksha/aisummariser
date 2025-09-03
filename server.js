@@ -75,7 +75,7 @@ app.post("/api/email", async (req, res) => {
         host: process.env.SMTP_HOST,
         port: Number(process.env.SMTP_PORT || 587),
         secure: Boolean(process.env.SMTP_SECURE === "true"),
-        auth: {
+        auth:{
           user: process.env.SMTP_USER,
           pass: process.env.SMTP_PASS
         }
